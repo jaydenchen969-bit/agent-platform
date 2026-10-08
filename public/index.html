@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Platform</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-mark"><span class="brand-dot"></span><span>Agent OS</span></div>
+        <div class="workspace-label">WORKSPACE</div>
+        <button class="workspace-switcher">我的工作空间 <span>⌄</span></button>
+        <nav class="nav-list">
+          <button class="nav-item active"><span>◈</span> Agent 中心</button>
+          <button class="nav-item"><span>⌘</span> 工作流</button>
+          <button class="nav-item"><span>◌</span> 知识库</button>
+          <button class="nav-item"><span>◫</span> 运行记录</button>
+        </nav>
+        <div class="sidebar-footer"><span class="avatar">J</span><div><strong>Jayden</strong><small>管理员</small></div><span class="more">•••</span></div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div><p class="eyebrow">AGENT CENTER</p><h1>构建你的 AI 团队</h1><p class="subtitle">创建、配置并运行专属 Agent，把重复工作交给 AI。</p></div>
+          <button class="primary-button" id="open-create">＋ 新建 Agent</button>
+        </header>
+
+        <section class="stats-grid">
+          <article class="stat-card"><span class="stat-icon purple">◈</span><div><small>Agent 总数</small><strong id="agent-count">0</strong></div><span class="trend">+2 本周</span></article>
+          <article class="stat-card"><span class="stat-icon blue">↯</span><div><small>本月运行次数</small><strong>128</strong></div><span class="trend">+18.4%</span></article>
+          <article class="stat-card"><span class="stat-icon green">◷</span><div><small>平均响应时间</small><strong>1.8s</strong></div><span class="trend">-12.6%</span></article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel agents-panel"><div class="panel-heading"><div><h2>我的 Agents</h2><p>选择一个 Agent 开始对话，或创建新的智能角色。</p></div><button class="ghost-button" id="refresh-agents">刷新</button></div><div class="agent-list" id="agent-list"></div></div>
+          <div class="panel chat-panel"><div class="chat-heading"><div class="agent-avatar" id="selected-avatar">C</div><div><h2 id="selected-name">选择一个 Agent</h2><p id="selected-description">从左侧选择 Agent 开始体验。</p></div><span class="live-pill"><i></i> 在线</span></div><div class="messages" id="messages"><div class="empty-state"><div class="empty-icon">✦</div><h3>准备好开始了吗？</h3><p>选择一个 Agent，然后发送你的第一个任务。</p></div></div><form class="composer" id="chat-form"><input id="chat-input" placeholder="给 Agent 分配一个任务..." autocomplete="off" /><button aria-label="发送">➤</button></form></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="create-dialog"><form method="dialog" class="dialog-card" id="create-form"><div class="dialog-heading"><div><p class="eyebrow">NEW AGENT</p><h2>创建一个新 Agent</h2></div><button class="close-button" value="cancel">×</button></div><label>Agent 名称<input name="name" required placeholder="例如：销售复盘 Agent" /></label><label>描述<textarea name="description" rows="3" placeholder="这个 Agent 负责什么？"></textarea></label><label>系统提示词<textarea name="systemPrompt" rows="4" placeholder="定义 Agent 的角色、语气和工作方式"></textarea></label><div class="dialog-actions"><button class="ghost-button" value="cancel">取消</button><button class="primary-button" value="default">创建 Agent</button></div></form></dialog>
+    <script src="/app.js"></script>
+  </body>
+</html>
