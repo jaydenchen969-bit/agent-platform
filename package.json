@@ -1,0 +1,11 @@
+{
+  "name": "agent-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "一个可扩展的 Agent 平台 MVP",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}
